@@ -1,10 +1,9 @@
-import PageHeading from '../components/PageHeading/PageHeading';
+import { PageHeading } from 'components/PageHeading/PageHeading';
 
-export default function HomeView() {
+export const HomeView = () => {
   return (
     <>
-      <PageHeading text="Добро пожаловать" />
-
+      <PageHeading>Добро пожаловать</PageHeading>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
         nihil illo est! Quos cum rerum dolores voluptates odio iste est nam
@@ -62,4 +61,4 @@ export default function HomeView() {
       </p>
     </>
   );
-}
+};

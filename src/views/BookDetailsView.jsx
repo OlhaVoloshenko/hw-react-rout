@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import PageHeading from '../components/PageHeading/PageHeading';
+import { PageHeading } from 'components/PageHeading/PageHeading';
 import * as bookShelfAPI from '../services/bookshelf-api';
 
-export default function BookDetailsView() {
+export const BookDetailsView = () => {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
 
@@ -13,8 +13,7 @@ export default function BookDetailsView() {
 
   return (
     <>
-      <PageHeading text={`Книга ${bookId}`} />
-
+      <PageHeading>Книга {bookId}</PageHeading>
       {book && (
         <>
           <img src={book.imgUrl} alt={book.title} />
@@ -25,4 +24,4 @@ export default function BookDetailsView() {
       )}
     </>
   );
-}
+};

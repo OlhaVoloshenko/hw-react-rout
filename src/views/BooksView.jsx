@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as bookShelfAPI from '../services/bookshelf-api';
-import PageHeading from '../components/PageHeading/PageHeading';
+import { PageHeading } from 'components/PageHeading/PageHeading';
 
-export default function BooksView() {
-  const { url } = useRouteMatch();
+export const BooksView = () => {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
@@ -13,17 +12,16 @@ export default function BooksView() {
 
   return (
     <>
-      <PageHeading text="Книги" />
-
+      <PageHeading>Книги</PageHeading>
       {books && (
         <ul>
           {books.map(book => (
             <li key={book.id}>
-              <Link to={`${url}/${book.id}`}>{book.title}</Link>
+              <Link to={`${book.id}`}>{book.title}</Link>
             </li>
           ))}
         </ul>
       )}
     </>
   );
-}
+};

@@ -1,4 +1,6 @@
-.title {
+import styled from 'styled-components';
+
+export const Heading = styled.h1`
   padding: 8px;
   margin-top: 0;
   border-radius: 8px;
@@ -13,4 +15,4 @@
     #465298 15px,
     #465298 30px
   );
-}
+`;
